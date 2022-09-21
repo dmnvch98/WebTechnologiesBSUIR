@@ -1,8 +1,9 @@
-package lab3;
+package lab3.entities;
+
+import lab3.utils.Utils;
 
 import java.io.*;
 import java.net.Socket;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Client {
@@ -21,11 +22,12 @@ public class Client {
         // create a DataInputStream so we can read data from it.
         ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
 
-        // make a bunch of messages to send.
-        File file = new File("src/main/java/lab3/users.xml");
+        // file to send
+        File file = new File("src/main/java/lab3/otherFiles/users.xml");
 
-        System.out.println("Sending file to the ServerSocket");
+        System.out.println("Sending " + file.getName() + " to the ServerSocket");
         objectOutputStream.writeObject(file);
+        objectOutputStream.writeObject(Utils.selectParser());
 
         List<User> listOfUsers = (List<User>) objectInputStream.readObject();
         System.out.println(listOfUsers);

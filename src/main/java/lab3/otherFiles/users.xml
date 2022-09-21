@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<users>
+    <user id="1">
+        <username>User1</username>
+        <salary>1000</salary>
+        <married>true</married>
+    </user>
+    <user id="2">
+        <username>User2</username>
+        <salary>2000</salary>
+        <married>false</married>
+    </user>
+    <user id="3">
+        <username>User3</username>
+        <salary>2500</salary>
+        <married>true</married>
+    </user>
+</users>
